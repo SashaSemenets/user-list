@@ -1,0 +1,62 @@
+.detail-view {
+  width: 584px;
+  height: 711px;
+  /* UI Properties */
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  border: 1px solid var(--unnamed-color-ebedf3);
+  box-shadow: 0px 0px 30px #523F690D;
+  border-radius: 6px;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 31px 26px 26px;
+}
+
+.user-form__content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: none;
+}
+
+.user-form__item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border: none;
+  gap: 3px;
+  padding: 0;
+}
+
+.user-form__item-label {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-13)/var(--unnamed-line-spacing-16) var(--unnamed-font-family-helvetica);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-3f4254);
+  text-align: left;
+  opacity: 1;
+}
+
+.user-form__item-field {
+  max-width: 532px;
+  max-height: 46px;
+
+  /* UI Properties */
+  background: var(--unnamed-color-f3f6f9) 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  opacity: 1;
+  border: none;
+  padding: 17px 16px 16px;
+
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300) var(--unnamed-font-size-13)/var(--unnamed-line-spacing-16) var(--unnamed-font-family-helvetica);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-3f4254);
+  text-align: left;
+  font: normal normal 300 13px/16px Helvetica;
+  letter-spacing: 0px;
+  color: #3F4254;
+  opacity: 1;
+}

@@ -1,0 +1,15 @@
+.user-list__table {
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  border: 1px solid var(--unnamed-color-ebedf3);
+  box-shadow: 0px 0px 30px rgba(82, 63, 105, 0.05);
+  border-radius: 6px;
+  opacity: 1;
+
+  width: 1218px;
+  height: 711px;
+}
+
+.user-list__table-row {
+  background: var(--unnamed-color-f4f5f8) 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
