@@ -1,0 +1,146 @@
+<section class="detail-view">
+  <div class="detail-view__header">
+    <ng-container *ngIf="isUserSelected(); else createView">
+      <div class="detail-view__label">
+        {{ getFullName() }}
+      </div>
+    </ng-container>
+
+    <ng-template #createView>
+      <div class="detail-view__label">
+        Create new user
+      </div>
+    </ng-template>
+
+    <button type="button" aria-label="Close" (click)="closeDetailView()" class="detail-view__close-btn">
+      <img src="../../../../assets/img/close-icon.svg" alt="Icon">
+    </button>
+  </div>
+
+  <form [formGroup]="userForm" (ngSubmit)="submit()" class="user-form">
+    <fieldset class="user-form__content">
+      <fieldset class="user-form__item">
+        <label for="username" class="user-form__item-label">
+          Username*
+        </label>
+        <input
+          id="username"
+          type="text"
+          class="user-form__item-field"
+          formControlName="username">
+        <div *ngIf="userForm.get('username')?.invalid && (userForm.get('username')?.dirty || userForm.get('username')?.touched)" class="user-form__item-field-errors">
+          <div *ngIf="userForm.get('username')?.errors?.['required']">Username is required.</div>
+        </div>
+      </fieldset>
+
+      <fieldset class="user-form__item">
+        <label for="firstname" class="user-form__item-label">
+          First name*
+        </label>
+        <input
+          id="firstname"
+          type="text"
+          class="user-form__item-field"
+          formControlName="firstname">
+        <div *ngIf="userForm.get('firstname')?.invalid && (userForm.get('firstname')?.dirty || userForm.get('firstname')?.touched)" class="user-form__item-field-errors">
+          <div *ngIf="userForm.get('firstname')?.errors?.['required']">First name is required.</div>
+        </div>
+      </fieldset>
+
+      <fieldset class="user-form__item">
+        <label for="lastname" class="user-form__item-label">
+          Last name*
+        </label>
+        <input
+          id="lastname"
+          type="text"
+          class="user-form__item-field"
+          formControlName="lastname">
+        <div *ngIf="userForm.get('lastname')?.invalid && (userForm.get('lastname')?.dirty || userForm.get('lastname')?.touched)" class="user-form__item-field-errors">
+          <div *ngIf="userForm.get('lastname')?.errors?.['required']">Last name is required.</div>
+        </div>
+      </fieldset>
+
+      <fieldset class="user-form__item user-form__item-email">
+        <label for="email" class="user-form__item-label">
+          Email*
+        </label>
+        <input
+          id="email"
+          type="email"
+          class="user-form__item-field"
+          formControlName="email">
+        <span class="icon"></span>
+        <div *ngIf="userForm.get('email')?.invalid && (userForm.get('email')?.dirty || userForm.get('email')?.touched)" class="user-form__item-field-errors">
+          <div *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</div>
+          <div *ngIf="userForm.get('email')?.errors?.['email']">Invalid email format</div>
+        </div>
+      </fieldset>
+
+      <fieldset class="user-form__item">
+        <label for="type" class="user-form__item-label">
+          Type*
+        </label>
+        <select formControlName="type" id="type" class="user-form__item-field user-form__item-field-select">
+          <option value=""></option>
+          <option value="Administrator">Administrator</option>
+          <option value="Driver">Driver</option>
+        </select>
+        <div *ngIf="userForm.get('type')?.invalid && (userForm.get('type')?.dirty || userForm.get('type')?.touched)" class="user-form__item-field-errors">
+          <div *ngIf="userForm.get('type')?.errors?.['required']">Type is required.</div>
+        </div>
+      </fieldset>
+
+      <fieldset class="user-form__item">
+        <label for="password" class="user-form__item-label">
+          Password*
+        </label>
+        <input
+          id="password"
+          type="password"
+          class="user-form__item-field"
+          formControlName="password">
+        <div *ngIf="userForm.get('password')?.invalid && (userForm.get('password')?.dirty || userForm.get('password')?.touched)" class="user-form__item-field-errors">
+          <div *ngIf="userForm.get('password')?.errors?.['required']">Password is required.</div>
+          <div *ngIf="userForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long</div>
+          <div *ngIf="userForm.get('password')?.errors?.['noNumber']">Password must contain at least one number</div>
+          <div *ngIf="userForm.get('password')?.errors?.['noLetter']">Password must contain at least one letter</div>
+        </div>
+      </fieldset>
+
+      <fieldset class="user-form__item">
+        <label for="repeat-password" class="user-form__item-label">
+          Repeat password*
+        </label>
+        <input
+          id="repeat-password"
+          type="password"
+          class="user-form__item-field"
+          formControlName="repeatPassword">
+        <div *ngIf="userForm.get('repeatPassword')?.invalid && (userForm.get('repeatPassword')?.dirty || userForm.get('repeatPassword')?.touched)" class="user-form__item-field-errors">
+          <div *ngIf="userForm.get('repeatPassword')?.errors?.['required']">Repeat password is required.</div>
+          <div *ngIf="userForm.get('repeatPassword')?.errors?.['minlength']">Repeat password must be at least 8 characters long</div>
+          <div *ngIf="userForm.get('repeatPassword')?.errors?.['noNumber']">Repeat password must contain at least one number</div>
+          <div *ngIf="userForm.get('repeatPassword')?.errors?.['noLetter']">Repeat password must contain at least one letter</div>
+          <div *ngIf="userForm.get('repeatPassword')?.errors?.['passwordMismatch']">Passwords and Repeat password do not match</div>
+        </div>
+      </fieldset>
+      <fieldset class="user-form__item user-form__item-ctrls" [ngClass]="{ 'one-row': isUserSelected() }">
+        <button
+          *ngIf="isUserSelected()"
+          class="user-form__btn delete-btn"
+          (click)="deleteUser()">
+          Delete
+        </button>
+
+        <button
+          type="submit"
+          [disabled]="userForm.invalid"
+          class="user-form__btn submit-btn">
+          <span *ngIf="!isUserSelected(); else saveBtn">Create</span>
+          <ng-template #saveBtn>Save</ng-template>
+        </button>
+      </fieldset>
+    </fieldset>
+  </form>
+</section>

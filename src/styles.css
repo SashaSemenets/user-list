@@ -31,5 +31,6 @@
 }
 
 body {
+  margin: 0;
   background: var(--unnamed-color-eef0f8);
 }

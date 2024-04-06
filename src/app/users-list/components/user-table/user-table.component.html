@@ -1,5 +1,5 @@
-<table class="user-list__table">
-  <thead>
+<table class="user-list__table" *ngIf="(users$ | async) as users">
+  <thead class="user-list__table-header">
     <tr>
       <th>Username</th>
       <th>First name</th>
@@ -8,8 +8,8 @@
       <th>Type</th>
     </tr>
   </thead>
-  <tbody (click)="onRowClick($event)">
-    <tr class="user-list__table-row" *ngFor="let item of userListProps" [id]="item.id">
+  <tbody>
+    <tr class="user-list__table-row" *ngFor="let item of users" (click)="onRowClick(item)">
       <td>{{ item.username }}</td>
       <td>{{ item.firstname }}</td>
       <td>{{ item.lastname }}</td>
@@ -17,4 +17,6 @@
       <td>{{ item.type }}</td>
     </tr>
   </tbody>
+  <tfoot class="user-list__table-footer">
+  </tfoot>
 </table>

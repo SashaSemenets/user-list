@@ -1,9 +1,1 @@
-<section class="user-list">
-  <div>
-    <button class="user-list__button" (click)="openModal()">Create User</button>
-
-    <app-user-table [userList]="(data$ | async)" (selectUser)="handleSelectedUser($event)"></app-user-table>
-  </div>
-
-  <app-detail-info *ngIf="showDetailInfo" (closeDetail)="closeDetailView()"></app-detail-info>
-</section>
+<router-outlet></router-outlet>

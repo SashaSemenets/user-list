@@ -1,0 +1,150 @@
+.detail-view {
+  width: 30.42vw;
+  max-height: 711px;
+  /* UI Properties */
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  border: 1px solid var(--unnamed-color-ebedf3);
+  box-shadow: 0px 0px 30px #523F690D;
+  border-radius: 6px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  margin-top: 185px;
+}
+
+.detail-view__header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 29px;
+}
+
+.detail-view__label {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-helvetica);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-3f4254);
+}
+
+.detail-view__close-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.user-form__content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: none;
+}
+
+.user-form__item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border: none;
+  gap: 3px;
+  padding: 0;
+}
+
+.user-form__item-label {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-13)/var(--unnamed-line-spacing-16) var(--unnamed-font-family-helvetica);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-3f4254);
+  text-align: left;
+  opacity: 1;
+}
+
+.user-form__item-field {
+  background: var(--unnamed-color-f3f6f9) 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  border: none;
+  padding: 17px 16px 16px;
+  max-height: 46px;
+  height: 13px;
+
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300) var(--unnamed-font-size-13)/var(--unnamed-line-spacing-16) var(--unnamed-font-family-helvetica);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-3f4254);
+  text-align: left;
+}
+
+.user-form__item-field.ng-invalid.ng-touched {
+  border: 1px solid var(--unnamed-color-ef7da0);
+}
+
+.user-form__item-field-errors {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-13)/var(--unnamed-line-spacing-16) var(--unnamed-font-family-helvetica);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-ef7da0);
+}
+
+.user-form__item-email {
+  position: relative;
+}
+
+.user-form__item-email .user-form__item-field {
+  padding-left: 16px;
+}
+
+.user-form__item-email .user-form__item-field .icon {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url('../../../../assets/img/email.svg');
+  /* Replace with your icon path */
+  background-size: cover;
+}
+
+.user-form__item-field-select {
+  min-height: 46px;
+  font-size: 13px;
+}
+
+.submit-btn {
+  background: var(--unnamed-color-2e8ff0) 0% 0% no-repeat padding-box;
+}
+
+.user-form__item-ctrls {
+  align-items: center;
+}
+
+.user-form__item-ctrls .submit-btn {
+  width: fit-content;
+  box-shadow: 0px 5px 8px #2E8FF029;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-17) var(--unnamed-font-family-helvetica);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-ffffff);
+  border-radius: 6px;
+  padding: 16px 39px;
+  border: none;
+}
+
+.user-form__item-ctrls.one-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  box-shadow: 0px 5px 8px #2E8FF029;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-17) var(--unnamed-font-family-helvetica);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-ffffff);
+  border-radius: 6px;
+  padding: 16px 39px;
+  background: #F44682 0% 0% no-repeat padding-box;
+  border: none;
+}

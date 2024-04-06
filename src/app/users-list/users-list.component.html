@@ -1,0 +1,13 @@
+<section class="user-list">
+  <div class="user-list__table">
+    <button class="user-list__button" (click)="openModal()">Create User</button>
+
+    <app-user-table (openDetailView)="openModal()"></app-user-table>
+  </div>
+
+  <app-detail-info *ngIf="showDetailInfo" (closeDetail)="closeDetailView()"></app-detail-info>
+</section>
+
+<div class="notification-container" *ngIf="(notification$ | async) as notification" [ngClass]="{ 'error': notification.type === eNotificationType.Error}">
+  {{ notification.message }}
+</div>
