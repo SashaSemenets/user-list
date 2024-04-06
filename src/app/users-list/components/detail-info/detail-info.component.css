@@ -148,3 +148,19 @@
   background: #F44682 0% 0% no-repeat padding-box;
   border: none;
 }
+
+.user-form__item-email {
+  position: relative;
+  z-index: 1;
+}
+
+.user-form__item-email .user-form__item-field {
+  padding-left: 42px;
+}
+
+.user-form__item-email .icon {
+  position: absolute;
+  z-index: 2;
+  top: 30px;
+  left: 15px;
+}

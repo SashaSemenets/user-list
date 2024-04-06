@@ -70,8 +70,8 @@
           type="email"
           class="user-form__item-field"
           formControlName="email">
-        <span class="icon"></span>
-        <div *ngIf="userForm.get('email')?.invalid && (userForm.get('email')?.dirty || userForm.get('email')?.touched)" class="user-form__item-field-errors">
+          <img src="../../../../assets/img/email.svg" class="icon" width="24" height="24px" alt="icon">
+          <div *ngIf="userForm.get('email')?.invalid && (userForm.get('email')?.dirty || userForm.get('email')?.touched)" class="user-form__item-field-errors">
           <div *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</div>
           <div *ngIf="userForm.get('email')?.errors?.['email']">Invalid email format</div>
         </div>
